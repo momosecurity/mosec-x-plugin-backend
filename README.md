@@ -2,6 +2,14 @@
 
 MOSEC-X-PLUGIN 后端API服务
 
+## 关于我们
+
+Website：https://security.immomo.com
+
+WeChat:
+
+<img src="https://momo-mmsrc.oss-cn-hangzhou.aliyuncs.com/img-1c96a083-7392-3b72-8aec-bad201a6abab.jpeg" width="200" hegiht="200" align="left" />
+
 ## 版本要求
 
 Python 3.7.x
