@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS "vulrules" (
 
 #### 检测流程
 
-![flow](https://github.com/momosecurity/mosec-x-plugin-backend/blob/master/static/mosec-x-plugin-backend.svg)
+![flow](./static/mosec-x-plugin-backend.svg)
 
 ###  API
 
