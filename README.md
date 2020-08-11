@@ -1,6 +1,6 @@
 # MOSEC-X-PLUGIN Backend
 
-MOSEC-X-PLUGIN 后端API服务
+MOSEC-X-PLUGIN 后端检测API
 
 ## 关于我们
 
@@ -23,12 +23,33 @@ Python 3.7.x
 ## 运行
 
 ```shell script
-# will run on http://127.0.0.1:9000/
-
 > python website.py
+# will run on http://127.0.0.1:9000/
 ```
 
-## API
+## 开发
+
+#### 漏洞规则数据表
+
+```sqlite
+CREATE TABLE IF NOT EXISTS "vulrules" (
+  "title" TEXT(255),                -- 漏洞标题
+  "name" TEXT(255),                 -- 漏洞组件名称 ( vendor / groupId:artifactId )
+  "severity" TEXT(10),              -- 漏洞危害等级 ( High / Medium / Low )
+  "type" TEXT(10),                  -- 构建工具类型 ( Maven / pip / npm / Composer )
+  "cve" TEXT(20),                   -- 漏洞对应CVE编号
+  "cvss3" TEXT(10),                 -- 漏洞对应CVSS3分数
+  "vul_version_fr" TEXT(255),       -- 漏洞组件最低版本 ( vul_version_fr <= 使用的组件版本 )
+  "vul_version_to" TEXT(255),       -- 漏洞组件最高版本 ( 使用的组件版本 <= vul_version_to )
+  "target_version" TEXT(255)        -- 漏洞组件安全版本 ( 数据类型是json.dumps(list) )
+);
+```
+
+#### 检测流程
+
+![flow](https://github.com/momosecurity/mosec-x-plugin-backend/blob/master/static/mosec-x-plugin-backend.svg)
+
+###  API
 
 #### POST /api/plugin
 
