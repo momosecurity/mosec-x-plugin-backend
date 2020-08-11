@@ -126,6 +126,7 @@ class Checker(object):
         roots = set()
         for dep in self.dependencies:
             if dep['root'] in roots:
+                roots.add(dep['name'])
                 continue
             result['dependencyCount'] += 1
 
